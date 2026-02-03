@@ -28,7 +28,7 @@ Die Idee: Jeder von uns übernimmt eine Schwachstelle und implementiert sie.
 | :--- | :--- | :--- | :--- |
 | **P1** | **Weak Credentials** | Admin-Login (Standardpasswort) | *Offen* |
 | **P2** | **SQL Injection** | Sendungsverfolgung | *Offen* |
-| **P3** | **Directory Traversal** | Rechnungs-Download | *Offen* |
+| **P3** | **Directory Traversal** | Rechnungs-Download | *Niklas* |
 | **P4** | **XSS (Stored)** | Notiz-Board für Mitarbeiter | *Offen* |
 | **P5** | **Broken Access Control** | Bestellansicht (IDOR) | *Offen* |
 | **P6** | **Info Disclosure** | Backup-Dateien / Git-Repo | *Offen* |
