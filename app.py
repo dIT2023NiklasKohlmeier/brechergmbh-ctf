@@ -1,7 +1,13 @@
 import sqlite3
-from flask import Flask, render_template, request
+from flask import Flask, render_template
+
+# WICHTIG: Hier steht jetzt "from routes.traversal", weil deine Datei so heißt!
+from routes.traversal import p3_blueprint
 
 app = Flask(__name__)
+
+# Hier melden wir deinen Teil an
+app.register_blueprint(p3_blueprint)
 
 # --- DATENBANK SETUP ---
 def init_db():
@@ -17,32 +23,23 @@ with app.app_context():
 # --- ROUTEN ---
 @app.route('/')
 def index():
-    return "<h1>Nexus Logistics</h1><p>Willkommen! <a href='/login'>Login</a> | <a href='/track'>Tracking</a></p>"
+    # Lädt die schöne Startseite
+    return render_template('index.html')
 
-# [P1] Weak Credentials
-@app.route('/login', methods=['GET', 'POST'])
-def login():
-    return "<h2>Login Page (TODO: Person 1)</h2>"
+# Platzhalter für die anderen (noch in der alten Form)
+@app.route('/login')
+def login(): return "Login (TODO: P1)"
 
-# [P2] SQL Injection
 @app.route('/track')
-def track():
-    return "<h2>Tracking (TODO: Person 2)</h2>"
+def track(): return "Tracking (TODO: P2)"
 
-# [P3] Directory Traversal
-@app.route('/download')
-def download():
-    return "Download (TODO: Person 3)"
+# Die Route /download ist hier weg, weil sie jetzt in deiner traversal.py steckt!
 
-# [P4] XSS
 @app.route('/notes')
-def notes():
-    return "Notes (TODO: Person 4)"
+def notes(): return "Notes (TODO: P4)"
 
-# [P5] Broken Access Control
-@app.route('/order/<order_id>')
-def order_details(order_id):
-    return f"Order {order_id} (TODO: Person 5)"
+@app.route('/order/<id>')
+def order(id): return f"Order {id} (TODO: P5)"
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
