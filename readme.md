@@ -18,6 +18,7 @@ Damit wir wenig Stress mit der Einrichtung haben:
 * **Python (Flask):** Simpel, wenig Code.
 * **SQLite:** Keine Datenbank-Installation nötig (nur eine Datei).
 * **Docker:** Läuft bei jedem gleich.
+moin niklas
 
 *(Ein funktionierendes "Hello World"-Gerüst liegt hier im Repo schon bereit).*
 
