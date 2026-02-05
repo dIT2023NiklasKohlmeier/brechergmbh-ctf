@@ -8,7 +8,7 @@
                 <h3 class="mb-0">📦 Sendungsverfolgung</h3>
             </div>
             <div class="card-body p-5">
-                <p class="text-muted">Geben Sie Ihre Frachtnummer ein, um den aktuellen Status zu prüfen.</p>
+                <p class="text-muted">Geben Sie Ihre Frachtnummer ein (z.B. BL-12345).</p>
                 
                 <form action="/track" method="get" class="d-flex gap-2 mb-4">
                     <input type="text" name="id" class="form-control form-control-lg" 
@@ -23,21 +23,23 @@
                     
                     {% if result %}
                         <div class="alert alert-success shadow-sm">
-                            <div class="d-flex align-items-center mb-3">
-                                <span class="h1 me-3 m-0">📍</span>
-                                <div>
-                                    <h4 class="alert-heading fw-bold m-0">Sendung gefunden!</h4>
-                                    <small class="text-muted">Tracking-ID: {{ result[1] }}</small>
-                                </div>
-                            </div>
-                            
-                            <div class="bg-white p-3 rounded border">
-                                <div class="row">
-                                    <div class="col-md-4"><strong>Status:</strong></div>
-                                    <div class="col-md-8 text-primary fw-bold">{{ result[2] }}</div>
-                                </div>
-                                <div class="row mt-2">
-                                    <div class="col-md-4"><strong>Aktueller Ort:</strong></div>
-                                    <div class="col-md-8">{{ result[3] }}</div>
-                                </div>
-                                {% endblock %}
+                            <h4 class="alert-heading fw-bold">Sendung gefunden!</h4>
+                            <p>
+                                <strong>ID:</strong> {{ result[1] }}<br>
+                                <strong>Status:</strong> {{ result[2] }}<br>
+                                <strong>Ort:</strong> {{ result[3] }}
+                            </p>
+                        </div>
+
+                    {% else %}
+                        <div class="alert alert-danger">
+                            <strong>Nicht gefunden</strong><br>
+                            Nummer '{{ tracking_id }}' ist unbekannt.
+                        </div>
+                    {% endif %} {% else %}
+                    <p class="text-center text-muted">Bitte Nummer eingeben.</p>
+                {% endif %} </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
