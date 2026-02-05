@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row justify-content-center mt-5">
+    <div class="col-md-5">
+        <div class="card shadow border-0">
+            <div class="card-body p-5 text-center">
+                <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" height="60" class="mb-4">
+                <h3 class="mb-3">Mitarbeiter Login</h3>
+                
+                <form action="/login" method="post">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="username" name="username" placeholder="Benutzername">
+                        <label for="username">Benutzername</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Passwort">
+                        <label for="password">Passwort</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100 py-2">Anmelden</button>
+                </form>
+                
+                <p class="mt-4 text-muted small">
+                    Passwort vergessen? Bitte wenden Sie sich an den <a href="#">IT-Support</a>.<br>
+                    (Ticket-Bearbeitungszeit aktuell: 3 Wochen)
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

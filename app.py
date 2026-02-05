@@ -1,45 +1,25 @@
 import sqlite3
 from flask import Flask, render_template
-
-# WICHTIG: Hier steht jetzt "from routes.traversal", weil deine Datei so heißt!
-from routes.traversal import p3_blueprint
+# --- IMPORTE ---
+from routes.traversal import p3_blueprint  # Deine Datei
+from routes.p1_auth import p1_blueprint    # Neu
+from routes.p2_tracking import p2_blueprint # Neu
 
 app = Flask(__name__)
 
-# Hier melden wir deinen Teil an
+# --- REGISTRIEREN ---
 app.register_blueprint(p3_blueprint)
+app.register_blueprint(p1_blueprint)
+app.register_blueprint(p2_blueprint)
 
-# --- DATENBANK SETUP ---
-def init_db():
-    conn = sqlite3.connect('database.db')
-    conn.execute('CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY, username TEXT, password TEXT)')
-    conn.execute('INSERT OR IGNORE INTO users (username, password) VALUES ("admin", "password123")') 
-    conn.commit()
-    conn.close()
-
-with app.app_context():
-    init_db()
+# ... (Hier drunter bleibt dein Datenbank-Code und init_db wie vorher) ...
 
 # --- ROUTEN ---
 @app.route('/')
 def index():
-    # Lädt die schöne Startseite
     return render_template('index.html')
 
-# Platzhalter für die anderen (noch in der alten Form)
-@app.route('/login')
-def login(): return "Login (TODO: P1)"
+# Die alten Dummy-Routen für /login und /track kannst du LÖSCHEN,
+# weil die jetzt über die Blueprints oben geladen werden!
 
-@app.route('/track')
-def track(): return "Tracking (TODO: P2)"
-
-# Die Route /download ist hier weg, weil sie jetzt in deiner traversal.py steckt!
-
-@app.route('/notes')
-def notes(): return "Notes (TODO: P4)"
-
-@app.route('/order/<id>')
-def order(id): return f"Order {id} (TODO: P5)"
-
-if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0')
+# ... (Rest wie gehabt: notes, order, app.run) ...
