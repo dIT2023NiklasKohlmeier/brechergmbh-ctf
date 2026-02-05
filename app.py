@@ -13,14 +13,32 @@ app.register_blueprint(p3_blueprint)
 app.register_blueprint(p1_blueprint)
 app.register_blueprint(p2_blueprint)
 
-# --- DATENBANK SETUP ---
-# Das erstellt automatisch die Datenbank, wenn sie noch nicht da ist
 def init_db():
     conn = sqlite3.connect('database.db')
-    # Tabelle für User (wichtig für Login & SQL Injection später)
-    conn.execute('CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY, username TEXT, password TEXT)')
-    # Wir legen einen Admin an (damit P1 etwas zu hacken hat)
-    conn.execute('INSERT OR IGNORE INTO users (id, username, password) VALUES (1, "admin", "secret123")') 
+    cursor = conn.cursor()
+    
+    # 1. Tabelle für User (für Login / P1)
+    cursor.execute('CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY, username TEXT, password TEXT)')
+    # Ein Admin und ein normaler User
+    cursor.execute('INSERT OR IGNORE INTO users (id, username, password) VALUES (1, "admin", "secret123")') 
+    cursor.execute('INSERT OR IGNORE INTO users (id, username, password) VALUES (2, "hans", "passwort")') 
+
+    # 2. NEU: Tabelle für Pakete (für Tracking / P2)
+    cursor.execute('CREATE TABLE IF NOT EXISTS packages (id INTEGER PRIMARY KEY, tracking_number TEXT, status TEXT, location TEXT, sender TEXT)')
+    
+    # Wir füllen die DB mit "echten" Daten, damit man was findet
+    packages = [
+        (1, 'BL-12345', 'In Zustellung', 'Hamburg Verteilzentrum', 'Amazon'),
+        (2, 'BL-55555', 'Verzögert (Zoll)', 'Frankfurt Flughafen', 'China Gadgets GmbH'),
+        (3, 'BL-99999', 'Zugestellt', 'München', 'Oma Erna'),
+        # Das hier ist ein Easter-Egg, das man nur per SQL-Injection sieht ;)
+        (4, 'BL-ADMIN', 'TOP SECRET', 'Bunker Berlin', 'BND') 
+    ]
+    
+    # Daten einfügen (nur wenn sie noch nicht da sind)
+    for p in packages:
+        cursor.execute('INSERT OR IGNORE INTO packages (id, tracking_number, status, location, sender) VALUES (?, ?, ?, ?, ?)', p)
+
     conn.commit()
     conn.close()
 
