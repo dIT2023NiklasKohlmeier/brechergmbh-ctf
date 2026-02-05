@@ -19,8 +19,6 @@ Damit wir wenig Stress mit der Einrichtung haben:
 * **SQLite:** Keine Datenbank-Installation nötig (nur eine Datei).
 * **Docker:** Läuft bei jedem gleich.
 
-*(Ein funktionierendes "Hello World"-Gerüst liegt hier im Repo schon bereit).*
-
 ## 💀 Aufgabenverteilung (6 Lücken)
 Die Idee: Jeder von uns übernimmt eine Schwachstelle und implementiert sie.
 
@@ -33,10 +31,11 @@ Die Idee: Jeder von uns übernimmt eine Schwachstelle und implementiert sie.
 | **P5** | **Broken Access Control** | Bestellansicht (IDOR) | *Offen* |
 | **P6** | **Info Disclosure** | Backup-Dateien / Git-Repo | *Offen* |
 
-## ❓ Zur Diskussion
-1. Findet ihr die Story okay?
-2. Passt der Tech-Stack (Python) für alle?
-3. Wer möchte welche Lücke übernehmen?
+To DO:
+Einteilung zu Lücken (oder andere)
+Website schick machen
+Geileren Firmen Name wählen
+Absprechen Termine
 
 ---
 *Setup zum Testen:*
