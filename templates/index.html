@@ -1,8 +1,45 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="p-5 bg-white rounded shadow-sm">
-    <h1>Willkommen bei Brecher GmbH</h1>
-    <p class="lead">Das System läuft erfolgreich!</p>
+<div class="row align-items-center mb-5">
+    <div class="col-lg-8">
+        <h1 class="display-4 fw-bold">Nexus Logistics</h1>
+        <p class="lead text-muted">Global. Schnell. <span style="text-decoration: line-through;">Sicher.</span> Transparent.</p>
+        <p>
+            Willkommen im internen Portal der Nexus Logistics GmbH.
+            Wir verbinden Frachtzentren auf der ganzen Welt mit modernster Technologie (und Legacy-Code aus den 90ern).
+        </p>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+            <a href="/track" class="btn btn-primary btn-lg px-4 me-md-2">Sendung verfolgen</a>
+            <a href="/login" class="btn btn-outline-secondary btn-lg px-4">Mitarbeiter Login</a>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="card bg-light border-0 shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">📢 News-Ticker</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2">🔹 <strong>Update:</strong> Neue Firewall installiert (Konfig noch beta).</li>
+                    <li class="mb-2">🔹 <strong>HR:</strong> Bitte Passwörter nicht mehr auf Post-its schreiben!</li>
+                    <li class="mb-2">🔹 <strong>IT:</strong> Backup vom Freitag liegt im öffentlichen Ordner. Bitte löschen!</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row text-center mt-5">
+    <div class="col-md-4">
+        <h3>🌍 Weltweit</h3>
+        <p>Wir liefern überall hin. Außer Bielefeld.</p>
+    </div>
+    <div class="col-md-4">
+        <h3>🚀 High-Speed</h3>
+        <p>Unsere Drohnen sind schneller als Ihre Bestellung.</p>
+    </div>
+    <div class="col-md-4">
+        <h3>📂 Downloads</h3>
+        <p>Rechnungen & AGBs einfach <a href="/download?file=agb.txt">hier herunterladen</a>.</p>
+    </div>
 </div>
 {% endblock %}
