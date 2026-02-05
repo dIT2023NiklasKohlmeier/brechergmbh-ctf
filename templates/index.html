@@ -1,45 +1,68 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="row align-items-center mb-5">
-    <div class="col-lg-8">
-        <h1 class="display-4 fw-bold">Nexus Logistics</h1>
-        <p class="lead text-muted">Global. Schnell. <span style="text-decoration: line-through;">Sicher.</span> Transparent.</p>
-        <p>
-            Willkommen im internen Portal der Nexus Logistics GmbH.
-            Wir verbinden Frachtzentren auf der ganzen Welt mit modernster Technologie (und Legacy-Code aus den 90ern).
+<div class="row align-items-center mb-5 mt-4">
+    <div class="col-lg-7">
+        <div class="d-flex align-items-center mb-3">
+            <img src="{{ url_for('static', filename='logo.png') }}" alt="Brecher Logistics Logo" style="height: 80px; margin-right: 20px;">
+            <h1 class="display-4 fw-bold text-dark m-0">Brecher Logistics</h1>
+        </div>
+        
+        <p class="lead text-secondary mt-3">
+            <strong>Präzision. Sicherheit. Reichweite.</strong><br>
+            Als weltweit operierender Logistikdienstleister bieten wir Ihnen maßgeschneiderte Supply-Chain-Lösungen. 
+            Vom Hamburger Hafen bis in die entlegensten Winkel der Welt – Ihre Fracht ist unser Auftrag.
         </p>
-        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-            <a href="/track" class="btn btn-primary btn-lg px-4 me-md-2">Sendung verfolgen</a>
-            <a href="/login" class="btn btn-outline-secondary btn-lg px-4">Mitarbeiter Login</a>
+        
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start mt-4">
+            <a href="/track" class="btn btn-primary btn-lg px-4 me-md-2 shadow-sm">Sendungsverfolgung starten</a>
+            <a href="/login" class="btn btn-outline-dark btn-lg px-4">Partner-Login</a>
         </div>
     </div>
-    <div class="col-lg-4">
-        <div class="card bg-light border-0 shadow-sm">
+    
+    <div class="col-lg-5">
+        <div class="card border-0 shadow-sm bg-white">
+            <div class="card-header bg-dark text-white">
+                <h5 class="m-0">Unternehmens-News</h5>
+            </div>
             <div class="card-body">
-                <h5 class="card-title">📢 News-Ticker</h5>
                 <ul class="list-unstyled">
-                    <li class="mb-2">🔹 <strong>Update:</strong> Neue Firewall installiert (Konfig noch beta).</li>
-                    <li class="mb-2">🔹 <strong>HR:</strong> Bitte Passwörter nicht mehr auf Post-its schreiben!</li>
-                    <li class="mb-2">🔹 <strong>IT:</strong> Backup vom Freitag liegt im öffentlichen Ordner. Bitte löschen!</li>
+                    <li class="mb-3 border-bottom pb-2">
+                        <small class="text-muted">04. Feb 2026</small><br>
+                        <strong>Expansion Nordamerika:</strong> Neuer Hub in Chicago eröffnet, um Lieferzeiten um 20% zu verkürzen.
+                    </li>
+                    <li class="mb-3 border-bottom pb-2">
+                        <small class="text-muted">01. Feb 2026</small><br>
+                        <strong>Nachhaltigkeit:</strong> Brecher Logistics stellt Flotte bis 2030 komplett auf E-Mobilität um.
+                    </li>
+                    <li>
+                        <small class="text-muted">28. Jan 2026</small><br>
+                        <strong>IT-Wartung:</strong> Das Kundenportal wurde erfolgreich aktualisiert.
+                    </li>
                 </ul>
             </div>
         </div>
     </div>
 </div>
 
-<div class="row text-center mt-5">
-    <div class="col-md-4">
-        <h3>🌍 Weltweit</h3>
-        <p>Wir liefern überall hin. Außer Bielefeld.</p>
+<div class="row text-center mt-5 pt-4 border-top">
+    <div class="col-md-4 mb-4">
+        <div class="h2 text-primary">✈️</div>
+        <h4 class="fw-bold">Air Freight</h4>
+        <p class="text-muted">Express-Lösungen für zeitkritische Sendungen weltweit.</p>
     </div>
-    <div class="col-md-4">
-        <h3>🚀 High-Speed</h3>
-        <p>Unsere Drohnen sind schneller als Ihre Bestellung.</p>
+    <div class="col-md-4 mb-4">
+        <div class="h2 text-primary">🚢</div>
+        <h4 class="fw-bold">Ocean Freight</h4>
+        <p class="text-muted">Kosteneffiziente Containerlogistik für Großvolumen.</p>
     </div>
-    <div class="col-md-4">
-        <h3>📂 Downloads</h3>
-        <p>Rechnungen & AGBs einfach <a href="/download?file=agb.txt">hier herunterladen</a>.</p>
+    <div class="col-md-4 mb-4">
+        <div class="h2 text-primary">📄</div>
+        <h4 class="fw-bold">Dokumentencenter</h4>
+        <p class="text-muted">
+            Laden Sie wichtige Unterlagen (AGB, Zertifikate) direkt herunter.<br>
+            <a href="/download?file=agb.txt" class="text-decoration-none fw-bold">Zum Download-Bereich &raquo;</a>
+        </p>
     </div>
 </div>
 {% endblock %}
