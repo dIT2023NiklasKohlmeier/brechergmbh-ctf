@@ -18,7 +18,7 @@ Damit wir wenig Stress mit der Einrichtung haben:
 * **Python (Flask):** Simpel, wenig Code.
 * **SQLite:** Keine Datenbank-Installation nötig (nur eine Datei).
 * **Docker:** Läuft bei jedem gleich.
-moin niklas
+ Fabian ist ein Käfer
 
 ## 💀 Aufgabenverteilung (6 Lücken)
 Die Idee: Jeder von uns übernimmt eine Schwachstelle und implementiert sie.
