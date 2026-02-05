@@ -27,7 +27,7 @@ Die Idee: Jeder von uns übernimmt eine Schwachstelle und implementiert sie.
 | Nr | Schwachstelle | Ort in der App | Status |
 | :--- | :--- | :--- | :--- |
 | **P1** | **Weak Credentials** | Admin-Login (Standardpasswort) | *Offen* |
-| **P2** | **SQL Injection** | Sendungsverfolgung | *Offen* |
+| **P2** | **SQL Injection** | Sendungsverfolgung | *Timo* |
 | **P3** | **Directory Traversal** | Rechnungs-Download | *Niklas* |
 | **P4** | **XSS (Stored)** | Notiz-Board für Mitarbeiter | *Offen* |
 | **P5** | **Broken Access Control** | Bestellansicht (IDOR) | *Offen* |
