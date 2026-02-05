@@ -4,6 +4,12 @@ Moin Leute,
 
 hier ist ein Entwurf für unser Gruppenprojekt im Modul "Erweiterte IT Angriffe". Ich habe mal ein technisches Grundgerüst aufgesetzt, damit wir sehen können, ob das machbar ist.
 
+## 📋 To Do
+- [ ] Einteilung zu Lücken (oder andere)
+- [ ] Website schick machen
+- [ ] Geileren Firmen Name wählen
+- [ ] Absprechen Termine
+
 ## 🎯 Das Ziel
 Wir bauen eine **verwundbare Webanwendung** für ein fiktives Logistik-Startup. Unsere Kommilitonen müssen darin später Sicherheitslücken finden (Capture the Flag).
 
@@ -30,12 +36,6 @@ Die Idee: Jeder von uns übernimmt eine Schwachstelle und implementiert sie.
 | **P4** | **XSS (Stored)** | Notiz-Board für Mitarbeiter | *Offen* |
 | **P5** | **Broken Access Control** | Bestellansicht (IDOR) | *Offen* |
 | **P6** | **Info Disclosure** | Backup-Dateien / Git-Repo | *Offen* |
-
-To DO:
-Einteilung zu Lücken (oder andere)
-Website schick machen
-Geileren Firmen Name wählen
-Absprechen Termine
 
 ---
 *Setup zum Testen:*
