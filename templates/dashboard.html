@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row justify-content-center mt-5">
+    <div class="col-md-8">
+        <div class="alert alert-success shadow-lg">
+            <h2 class="alert-heading">🔓 Zugriff gewährt!</h2>
+            <p class="lead">Willkommen zurück, <strong>{{ username }}</strong>.</p>
+            <hr>
+            <p>Hier sind die vertraulichen Admin-Daten:</p>
+            
+            <div class="card bg-dark text-white p-3 mt-3">
+                <pre class="m-0">
+SYSTEM STATUS: ONLINE
+FIREWALL: OFF (Maintenance Mode)
+FLAG: CTF{W34K_P4SSW0RDS_4R3_B4D}
+                </pre>
+            </div>
+            
+            <div class="mt-4">
+                <a href="/" class="btn btn-outline-success">Zurück zur Startseite</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
