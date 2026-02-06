@@ -1,46 +1,90 @@
 {% extends "base.html" %}
 
 {% block content %}
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
 <div class="row justify-content-center mt-4">
-    <div class="col-md-8">
-        <div class="card shadow-lg border-0">
-            <div class="card-header bg-primary text-white p-4">
-                <h3 class="mb-0">📦 Sendungsverfolgung</h3>
+    <div class="col-md-10"> <div class="card shadow-lg border-0">
+            <div class="card-header bg-dark text-white p-3 d-flex justify-content-between align-items-center">
+                <h4 class="mb-0">🌍 Global Tracking Dashboard</h4>
+                <small>Live-Status</small>
             </div>
-            <div class="card-body p-5">
-                <p class="text-muted">Geben Sie Ihre Frachtnummer ein (z.B. BL-12345).</p>
-                
-                <form action="/track" method="get" class="d-flex gap-2 mb-4">
-                    <input type="text" name="id" class="form-control form-control-lg" 
-                           placeholder="z.B. BL-12345" 
-                           value="{{ tracking_id if tracking_id else '' }}" required>
-                    <button type="submit" class="btn btn-dark btn-lg">Suchen</button>
+            
+            <div class="card-body p-0">
+                <div id="map" style="height: 400px; width: 100%;"></div>
+            </div>
+
+            <div class="card-body p-4 bg-light">
+                <form action="/track" method="get" class="d-flex gap-2 mb-3 shadow-sm p-2 bg-white rounded">
+                    <input type="text" name="id" class="form-control border-0" 
+                           placeholder="Sendungsnummer eingeben (z.B. BL-HAM-01)..." 
+                           value="{{ tracking_id if tracking_id else '' }}">
+                    <button type="submit" class="btn btn-primary px-4 fw-bold">TRACKEN</button>
                 </form>
 
-                <hr>
-
                 {% if tracking_id %}
-                    
                     {% if result %}
-                        <div class="alert alert-success shadow-sm">
-                            <h4 class="alert-heading fw-bold">Sendung gefunden!</h4>
-                            <p>
-                                <strong>ID:</strong> {{ result[1] }}<br>
-                                <strong>Status:</strong> {{ result[2] }}<br>
-                                <strong>Ort:</strong> {{ result[3] }}<br>
-                                <strong>Versand durch:</strong> {{ result[4] }}
-                            </p>
+                        <div class="alert alert-success border-0 shadow-sm">
+                            <h5 class="alert-heading fw-bold">✅ Sendung lokalisiert</h5>
+                            <hr>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <strong>Status:</strong><br>
+                                    <span class="badge bg-success">{{ result[2] }}</span>
+                                </div>
+                                <div class="col-md-4">
+                                    <strong>Aktueller Standort:</strong><br>
+                                    {{ result[3] }}
+                                </div>
+                                <div class="col-md-4">
+                                    <strong>Absender:</strong><br>
+                                    {{ result[4] }}
+                                </div>
+                            </div>
                         </div>
-
                     {% else %}
-                        <div class="alert alert-danger">
-                            <strong>Nicht gefunden</strong><br>
-                            Nummer '{{ tracking_id }}' ist unbekannt.
+                        <div class="alert alert-danger border-0 shadow-sm">
+                            ❌ Sendung <strong>{{ tracking_id }}</strong> nicht gefunden.
                         </div>
-                    {% endif %} {% else %}
-                    <p class="text-center text-muted">Bitte Nummer eingeben.</p>
-                {% endif %} </div>
+                    {% endif %}
+                {% endif %}
+            </div>
         </div>
     </div>
 </div>
+
+<script>
+    // Standard-Werte (Falls keine Suche aktiv ist): Mitte von Europa
+    var lat = 51.1657; 
+    var lon = 10.4515;
+    var zoomLevel = 5; // Weit herausgezoomt (Übersicht)
+    var showPin = false; // Standardmäßig kein Pin
+    var popupText = "";
+
+    // JINJA2 LOGIK: Wenn Python Ergebnisse liefert, überschreiben wir die JS-Variablen
+    {% if result %}
+        lat = {{ result[5] }};
+        lon = {{ result[6] }};
+        zoomLevel = 16; // Nah heranzoomen (Straßenlevel)
+        showPin = true;
+        popupText = "<b>{{ result[3] }}</b><br>Status: {{ result[2] }}";
+    {% endif %}
+
+    // 1. Karte initialisieren
+    var map = L.map('map').setView([lat, lon], zoomLevel);
+
+    // 2. Kacheln laden (Design: CartoDB Voyager - sieht moderner aus als Standard OSM)
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+        attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+        maxZoom: 19
+    }).addTo(map);
+
+    // 3. Pin setzen (nur wenn ein Ergebnis da ist)
+    if (showPin) {
+        L.marker([lat, lon]).addTo(map)
+            .bindPopup(popupText)
+            .openPopup();
+    }
+</script>
 {% endblock %}

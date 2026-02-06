@@ -17,27 +17,45 @@ def init_db():
     conn = sqlite3.connect('database.db')
     cursor = conn.cursor()
     
-    # 1. Tabelle für User (für Login / P1)
+    # User (bleibt gleich)
     cursor.execute('CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY, username TEXT, password TEXT)')
-    # Ein Admin und ein normaler User
     cursor.execute('INSERT OR IGNORE INTO users (id, username, password) VALUES (1, "admin", "secret123")') 
-    cursor.execute('INSERT OR IGNORE INTO users (id, username, password) VALUES (2, "hans", "passwort")') 
 
-    # 2. NEU: Tabelle für Pakete (für Tracking / P2)
-    cursor.execute('CREATE TABLE IF NOT EXISTS packages (id INTEGER PRIMARY KEY, tracking_number TEXT, status TEXT, location TEXT, sender TEXT)')
+    # Pakete
+    cursor.execute('DROP TABLE IF EXISTS packages')
     
-    # Wir füllen die DB mit "echten" Daten, damit man was findet
+    cursor.execute('''
+        CREATE TABLE packages (
+            id INTEGER PRIMARY KEY, 
+            tracking_number TEXT, 
+            status TEXT, 
+            location TEXT, 
+            sender TEXT
+        )
+    ''')
+    
+    # ECHTE STRASSEN FÜR GEOCODING
     packages = [
-        (1, 'BL-12345', 'In Zustellung', 'Hamburg Verteilzentrum', 'Amazon'),
-        (2, 'BL-55555', 'Verzögert (Zoll)', 'Frankfurt Flughafen', 'China Gadgets GmbH'),
-        (3, 'BL-99999', 'Zugestellt', 'München', 'Oma Erna'),
-        # Das hier ist ein Easter-Egg, das man nur per SQL-Injection sieht ;)
-        (4, 'BL-ADMIN', 'TOP SECRET', 'Bunker Berlin', 'BND') 
+        # Hamburg: Mitten auf dem Kiez
+        (1, 'BL-HAM-01', 'In Zustellung', 'Reeperbahn 1, Hamburg', 'Kiez Kiosk'),
+        
+        # Berlin: Direkt am Reichstag
+        (2, 'BL-BER-02', 'Verzögert (Demo)', 'Platz der Republik 1, Berlin', 'Regierung'),
+        
+        # München: Marienplatz
+        (3, 'BL-MUC-03', 'Zugestellt', 'Marienplatz 1, München', 'Bavaria GmbH'),
+        
+        # Frankfurt: Flughafen Cargo City
+        (4, 'BL-FRA-04', 'Zollabfertigung', 'Cargo City Süd, Frankfurt Flughafen', 'Logistics Worldwide'),
+        
+        # International: New York
+        (5, 'BL-NYC-05', 'Verschifft', 'Times Square, New York', 'US Imports Inc.'),
+        
+        # Easter Egg (SQL Injection Ziel)
+        (6, 'BL-ADMIN', 'TOP SECRET', 'BND Zentrale, Berlin', 'Geheimdienst') 
     ]
     
-    # Daten einfügen (nur wenn sie noch nicht da sind)
-    for p in packages:
-        cursor.execute('INSERT OR IGNORE INTO packages (id, tracking_number, status, location, sender) VALUES (?, ?, ?, ?, ?)', p)
+    cursor.executemany('INSERT INTO packages VALUES (?,?,?,?,?)', packages)
 
     conn.commit()
     conn.close()
