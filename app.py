@@ -24,7 +24,7 @@ def init_db():
     cursor.execute('INSERT OR IGNORE INTO users (id, username, password) VALUES (2, "hans", "passwort")') 
 
     # 2. NEU: Tabelle für Pakete (für Tracking / P2)
-    cursor.execute('CREATE TABLE IF NOT EXISTS packages (id INTEGER PRIMARY KEY, tracking_number TEXT, status TEXT, location TEXT, sender TEXT)')
+    cursor.execute('CREATE TABLE IF NOT EXISTS packages (id INTEGER PRIMARY KEY, tracking_number TEXT, status TEXT, location TEXT, sender TEXT comment TEXT)')
     
     # Wir füllen die DB mit "echten" Daten, damit man was findet
     packages = [
