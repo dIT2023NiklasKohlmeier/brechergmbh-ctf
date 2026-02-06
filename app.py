@@ -32,7 +32,7 @@ def init_db():
         (2, 'BL-55555', 'Verzögert (Zoll)', 'Frankfurt Flughafen', 'China Gadgets GmbH'),
         (3, 'BL-99999', 'Zugestellt', 'München', 'Oma Erna'),
         # Das hier ist ein Easter-Egg, das man nur per SQL-Injection sieht ;)
-        (4, 'BL-ADMIN', 'TOP SECRET', 'Bunker Berlin', 'BND') 
+        (4, 'BL-ADMIN', 'TOP SECRET', 'Bunker Berlin', 'BND', 'Banger Easteregg') 
     ]
     
     # Daten einfügen (nur wenn sie noch nicht da sind)
