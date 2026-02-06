@@ -21,7 +21,7 @@ Ich habe uns ein Skript gebaut, damit niemand manuell Python-Kram installieren m
 
 1. **Repository klonen** (falls noch nicht passiert):
    
-    git clone https://github.com/dIT2023NiklasKohlmeier/nexus-logistics-ctf.git
+    git clone https://github.com/dIT2023NiklasKohlmeier/brechergmbh-ctf.git
 
 2. **Starten (Windows):**
    👉 Doppelklick auf die Datei **start_website.bat**
