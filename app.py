@@ -28,16 +28,16 @@ def init_db():
     
     # Wir füllen die DB mit "echten" Daten, damit man was findet
     packages = [
-        (1, 'BL-12345', 'In Zustellung', 'Hamburg Verteilzentrum', 'Amazon', ''),
-        (2, 'BL-55555', 'Verzögert (Zoll)', 'Frankfurt Flughafen', 'China Gadgets GmbH', ''),
-        (3, 'BL-99999', 'Zugestellt', 'München', 'Oma Erna', ''),
+        (1, 'BL-12345', 'In Zustellung', 'Hamburg Verteilzentrum', 'Amazon'),
+        (2, 'BL-55555', 'Verzögert (Zoll)', 'Frankfurt Flughafen', 'China Gadgets GmbH'),
+        (3, 'BL-99999', 'Zugestellt', 'München', 'Oma Erna'),
         # Das hier ist ein Easter-Egg, das man nur per SQL-Injection sieht ;)
         (4, 'BL-ADMIN', 'TOP SECRET', 'Bunker Berlin', 'BND', 'Banger Easteregg') 
     ]
     
     # Daten einfügen (nur wenn sie noch nicht da sind)
     for p in packages:
-        cursor.execute('INSERT OR IGNORE INTO packages (id, tracking_number, status, location, sender) VALUES (?, ?, ?, ?, ?)', p)
+        cursor.execute('INSERT OR IGNORE INTO packages (id, tracking_number, status, location, sender, comment) VALUES (?, ?, ?, ?, ?, ?)', p)
 
     conn.commit()
     conn.close()
