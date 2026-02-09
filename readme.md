@@ -53,12 +53,12 @@ Die Idee: Jeder von uns übernimmt eine Schwachstelle und implementiert sie.
 
 | Nr | Schwachstelle | Ort in der App | Status |
 | :--- | :--- | :--- | :--- |
-| **P1** | **Weak Credentials** | Admin-Login (Brute Force) | ✅ Fertig (Login geht) |
-| **P2** | **SQL Injection** | Sendungsverfolgung | ✅ Fertig (Karte & DB) |
-| **P3** | **Directory Traversal** | Rechnungs-Download | ✅ Fertig |
-| **P4** | **XSS (Stored)** | Notiz-Board für Mitarbeiter | *Offen* |
-| **P5** | **Broken Access Control** | Bestellansicht (IDOR) | *Offen* |
-| **P6** | **Info Disclosure** | Backup-Dateien / Git-Repo | *Offen* |
+| **P1** | **Weak Credentials** | Admin-Login (Brute Force) | ✅ Fertig (Login geht) | Peter |
+| **P2** | **SQL Injection** | Sendungsverfolgung | ✅ Fertig (Karte & DB) | Timo |
+| **P3** | **Directory Traversal** | Rechnungs-Download | ✅ Fertig | - |
+| **P4** | **XSS (Stored)** | Notiz-Board für Mitarbeiter | *Offen* | - |
+| **P5** | **Broken Access Control** | Bestellansicht (IDOR) | *Offen* | - |
+| **P6** | **Info Disclosure** | Backup-Dateien / Git-Repo | *Offen* | - |
 
 ---
 
