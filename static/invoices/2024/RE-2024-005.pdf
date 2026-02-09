@@ -1,0 +1,62 @@
+%PDF-1.4
+1 0 obj
+<<
+/Type /Catalog
+/Pages 2 0 R
+>>
+endobj
+
+2 0 obj
+<<
+/Type /Pages
+/Kids [3 0 R]
+/Count 1
+>>
+endobj
+
+3 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/Contents 4 0 R
+>>
+endobj
+
+4 0 obj
+<<
+/Length 500
+>>
+stream
+========================================
+    BRECHER LOGISTICS GMBH
+    Rechnungsnummer: RE-2024-005
+========================================
+
+Datum: 31.05.2024
+Kunde: Global Trade Systems
+
+Position:
+- Security-Audit Premium
+
+Nettobetrag:      40,052.00 EUR
+MwSt. (19%):       7,609.88 EUR
+----------------------------------------
+Gesamtbetrag:     47,661.88 EUR
+
+Zahlbar bis: 14.06.2024
+
+Mit freundlichen Grüßen
+Brecher Logistics GmbH
+endstream
+endobj
+
+xref
+0 5
+trailer
+<<
+/Size 5
+/Root 1 0 R
+>>
+startxref
+3645
+%%EOF

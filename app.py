@@ -2,7 +2,7 @@ import sqlite3
 from flask import Flask, render_template
 
 # --- IMPORTE: Hier laden wir die Module deiner Gruppe ---
-from routes.traversal import p3_blueprint   # Dein Part (P3) - Directory Traversal
+from routes.p3_download import p3_blueprint # Dein Part (P3) - Directory Traversal
 from routes.p1_auth import p1_blueprint     # Niklas' Mate 1 (P1) - Login
 from routes.p2_tracking import p2_blueprint # Niklas' Mate 2 (P2) - Tracking
 

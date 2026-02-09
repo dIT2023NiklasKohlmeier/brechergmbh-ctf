@@ -1,0 +1,62 @@
+%PDF-1.4
+1 0 obj
+<<
+/Type /Catalog
+/Pages 2 0 R
+>>
+endobj
+
+2 0 obj
+<<
+/Type /Pages
+/Kids [3 0 R]
+/Count 1
+>>
+endobj
+
+3 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/Contents 4 0 R
+>>
+endobj
+
+4 0 obj
+<<
+/Length 500
+>>
+stream
+========================================
+    BRECHER LOGISTICS GMBH
+    Rechnungsnummer: RE-2023-001
+========================================
+
+Datum: 26.07.2023
+Kunde: Fischer Electronics
+
+Position:
+- Security-Audit Premium
+
+Nettobetrag:      32,226.00 EUR
+MwSt. (19%):       6,122.94 EUR
+----------------------------------------
+Gesamtbetrag:     38,348.94 EUR
+
+Zahlbar bis: 09.08.2023
+
+Mit freundlichen Grüßen
+Brecher Logistics GmbH
+endstream
+endobj
+
+xref
+0 5
+trailer
+<<
+/Size 5
+/Root 1 0 R
+>>
+startxref
+1202
+%%EOF

@@ -1,0 +1,62 @@
+%PDF-1.4
+1 0 obj
+<<
+/Type /Catalog
+/Pages 2 0 R
+>>
+endobj
+
+2 0 obj
+<<
+/Type /Pages
+/Kids [3 0 R]
+/Count 1
+>>
+endobj
+
+3 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/Contents 4 0 R
+>>
+endobj
+
+4 0 obj
+<<
+/Length 500
+>>
+stream
+========================================
+    BRECHER LOGISTICS GMBH
+    Rechnungsnummer: RE-2023-003
+========================================
+
+Datum: 19.03.2023
+Kunde: TechCorp Solutions GmbH
+
+Position:
+- Hardware-Lieferung Server
+
+Nettobetrag:      21,118.00 EUR
+MwSt. (19%):       4,012.42 EUR
+----------------------------------------
+Gesamtbetrag:     25,130.42 EUR
+
+Zahlbar bis: 02.04.2023
+
+Mit freundlichen Grüßen
+Brecher Logistics GmbH
+endstream
+endobj
+
+xref
+0 5
+trailer
+<<
+/Size 5
+/Root 1 0 R
+>>
+startxref
+2701
+%%EOF

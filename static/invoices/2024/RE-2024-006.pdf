@@ -1,0 +1,62 @@
+%PDF-1.4
+1 0 obj
+<<
+/Type /Catalog
+/Pages 2 0 R
+>>
+endobj
+
+2 0 obj
+<<
+/Type /Pages
+/Kids [3 0 R]
+/Count 1
+>>
+endobj
+
+3 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/Contents 4 0 R
+>>
+endobj
+
+4 0 obj
+<<
+/Length 500
+>>
+stream
+========================================
+    BRECHER LOGISTICS GMBH
+    Rechnungsnummer: RE-2024-006
+========================================
+
+Datum: 27.04.2024
+Kunde: Global Trade Systems
+
+Position:
+- Consulting-Paket Business
+
+Nettobetrag:      45,777.00 EUR
+MwSt. (19%):       8,697.63 EUR
+----------------------------------------
+Gesamtbetrag:     54,474.63 EUR
+
+Zahlbar bis: 11.05.2024
+
+Mit freundlichen Grüßen
+Brecher Logistics GmbH
+endstream
+endobj
+
+xref
+0 5
+trailer
+<<
+/Size 5
+/Root 1 0 R
+>>
+startxref
+6274
+%%EOF

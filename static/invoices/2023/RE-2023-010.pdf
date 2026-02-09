@@ -1,0 +1,62 @@
+%PDF-1.4
+1 0 obj
+<<
+/Type /Catalog
+/Pages 2 0 R
+>>
+endobj
+
+2 0 obj
+<<
+/Type /Pages
+/Kids [3 0 R]
+/Count 1
+>>
+endobj
+
+3 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/Contents 4 0 R
+>>
+endobj
+
+4 0 obj
+<<
+/Length 500
+>>
+stream
+========================================
+    BRECHER LOGISTICS GMBH
+    Rechnungsnummer: RE-2023-010
+========================================
+
+Datum: 16.08.2023
+Kunde: Schneider Maschinenbau
+
+Position:
+- Cloud-Storage Professional
+
+Nettobetrag:      45,797.00 EUR
+MwSt. (19%):       8,701.43 EUR
+----------------------------------------
+Gesamtbetrag:     54,498.43 EUR
+
+Zahlbar bis: 30.08.2023
+
+Mit freundlichen Grüßen
+Brecher Logistics GmbH
+endstream
+endobj
+
+xref
+0 5
+trailer
+<<
+/Size 5
+/Root 1 0 R
+>>
+startxref
+6695
+%%EOF

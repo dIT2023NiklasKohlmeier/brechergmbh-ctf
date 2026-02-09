@@ -1,0 +1,62 @@
+%PDF-1.4
+1 0 obj
+<<
+/Type /Catalog
+/Pages 2 0 R
+>>
+endobj
+
+2 0 obj
+<<
+/Type /Pages
+/Kids [3 0 R]
+/Count 1
+>>
+endobj
+
+3 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/Contents 4 0 R
+>>
+endobj
+
+4 0 obj
+<<
+/Length 500
+>>
+stream
+========================================
+    BRECHER LOGISTICS GMBH
+    Rechnungsnummer: RE-2023-007
+========================================
+
+Datum: 16.01.2023
+Kunde: TechCorp Solutions GmbH
+
+Position:
+- Wartungsvertrag Maschinen
+
+Nettobetrag:      48,293.00 EUR
+MwSt. (19%):       9,175.67 EUR
+----------------------------------------
+Gesamtbetrag:     57,468.67 EUR
+
+Zahlbar bis: 30.01.2023
+
+Mit freundlichen Grüßen
+Brecher Logistics GmbH
+endstream
+endobj
+
+xref
+0 5
+trailer
+<<
+/Size 5
+/Root 1 0 R
+>>
+startxref
+5719
+%%EOF
