@@ -51,8 +51,8 @@ Damit wir wenig Stress mit der Einrichtung haben:
 ## 💀 Aufgabenverteilung (6 Lücken)
 Die Idee: Jeder von uns übernimmt eine Schwachstelle und implementiert sie.
 
-| Nr | Schwachstelle | Ort in der App | Status |
-| :--- | :--- | :--- | :--- |
+| Nr | Schwachstelle | Ort in der App | Status | Name |
+| :--- | :--- | :--- | :--- | :--- |
 | **P1** | **Weak Credentials** | Admin-Login (Brute Force) | ✅ Fertig (Login geht) | Peter |
 | **P2** | **SQL Injection** | Sendungsverfolgung | ✅ Fertig (Karte & DB) | Timo |
 | **P3** | **Directory Traversal** | Rechnungs-Download | ✅ Fertig | Niklas |
