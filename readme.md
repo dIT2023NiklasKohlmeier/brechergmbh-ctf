@@ -55,7 +55,7 @@ Die Idee: Jeder von uns übernimmt eine Schwachstelle und implementiert sie.
 | :--- | :--- | :--- | :--- |
 | **P1** | **Weak Credentials** | Admin-Login (Brute Force) | ✅ Fertig (Login geht) | Peter |
 | **P2** | **SQL Injection** | Sendungsverfolgung | ✅ Fertig (Karte & DB) | Timo |
-| **P3** | **Directory Traversal** | Rechnungs-Download | ✅ Fertig | - |
+| **P3** | **Directory Traversal** | Rechnungs-Download | ✅ Fertig | Niklas |
 | **P4** | **XSS (Stored)** | Notiz-Board für Mitarbeiter | *Offen* | - |
 | **P5** | **Broken Access Control** | Bestellansicht (IDOR) | *Offen* | - |
 | **P6** | **Info Disclosure** | Backup-Dateien / Git-Repo | *Offen* | - |
