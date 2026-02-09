@@ -8,6 +8,9 @@ from routes.p2_tracking import p2_blueprint # Niklas' Mate 2 (P2) - Tracking
 
 app = Flask(__name__)
 
+# Secret Key für Sessions (für Login-Funktionalität)
+app.secret_key = 'brecher-logistics-secret-key-2024-ctf'
+
 # --- REGISTRIEREN: Hier sagen wir Flask, dass es diese Module nutzen soll ---
 app.register_blueprint(p3_blueprint)
 app.register_blueprint(p1_blueprint)

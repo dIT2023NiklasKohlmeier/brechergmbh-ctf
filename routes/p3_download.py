@@ -13,7 +13,7 @@ EXPLOIT:
 → Der Filter entfernt "../", aber aus "..../" wird dann "../"!
 """
 
-from flask import Blueprint, render_template, request, send_file
+from flask import Blueprint, render_template, request, send_file, session, redirect, url_for
 import os
 
 # Blueprint für P3 (Directory Traversal)
@@ -25,7 +25,12 @@ def documents():
     """
     Zeigt eine Liste der verfügbaren Dokumente im DMS
     Listet nur Dateien aus static/invoices/2024
+
+    ZUGRIFFSSCHUTZ: Nur für eingeloggte Mitarbeiter!
     """
+    # Prüfen, ob User eingeloggt ist
+    if not session.get('logged_in'):
+        return redirect(url_for('p1.login'))
     documents_path = 'static/invoices/2024'
 
     try:
@@ -52,6 +57,8 @@ def download():
     """
     Download-Funktion mit ABSICHTLICH SCHWACHEM FILTER (Broken Defense)
 
+    ZUGRIFFSSCHUTZ: Nur für eingeloggte Mitarbeiter!
+
     SCHWACHSTELLE:
     - Der Filter replace("../", "") ist unzureichend
     - Kann durch Nested Traversal umgangen werden: "..../" → nach Filter: "../"
@@ -62,6 +69,10 @@ def download():
     Nach dem Filter wird daraus:
     → ../ / ../ / secrets/config.py → ../../secrets/config.py
     """
+
+    # Prüfen, ob User eingeloggt ist
+    if not session.get('logged_in'):
+        return "Zugriff verweigert! Bitte melden Sie sich an.", 403
 
     # Parameter aus der URL auslesen
     folder = request.args.get('folder', '2024')

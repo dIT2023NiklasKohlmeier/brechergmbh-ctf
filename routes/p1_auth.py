@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, redirect, url_for
+from flask import Blueprint, render_template, request, redirect, url_for, session
 import sqlite3
 
 p1_blueprint = Blueprint('p1', __name__)
@@ -24,9 +24,18 @@ def login():
         
         if user:
             # Login erfolgreich!
-            # Hier könnte man eine Session starten, wir zeigen einfach eine Erfolgsseite
+            # Session starten - Benutzer ist jetzt eingeloggt
+            session['logged_in'] = True
+            session['username'] = username
             return render_template('dashboard.html', username=username)
         else:
             error = "Ungültiger Benutzername oder Passwort."
     
     return render_template('login.html', error=error)
+
+
+@p1_blueprint.route('/logout')
+def logout():
+    """Logout-Funktion - beendet die Session"""
+    session.clear()
+    return redirect(url_for('p1.login'))
